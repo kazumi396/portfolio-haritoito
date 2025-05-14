@@ -1,0 +1,530 @@
+@charset "UTF-8";
+/* ====================
+house
+==================== */
+#fixed-header {
+    top: 0;
+}
+
+.bgshikkui {
+    background-image: url(../images/bg_shikkui_housePc.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+.section--house {
+    position: relative;
+}
+
+.section--house::after {
+    content: '';
+    width: 349px;
+    height: 353px;
+    background-image: url(../images/house_afer2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: katakata 6s infinite ease-in-out alternate;
+}
+
+.house__txt {
+    padding-top: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.topic__main--house {
+    position: relative;
+}
+
+.topic__main--house:before {
+    content: '';
+    width: 208px;
+    height: 182px;
+    background-image: url(../images/house_voice4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:107px;
+    right: -325px;
+    transform-origin: center bottom;
+    animation: yurayura 2s linear infinite;
+}
+
+.pcSpan {
+    font-size: 2.0rem;
+}
+
+.house__content {
+    margin: 0 auto;
+    max-width: 769px;
+    padding-top: 5px;
+}
+
+.section--house li {
+    background-color: rgba(253, 253, 253, 0.80);
+    padding: 48px 36px;
+    display: flex;
+    margin-top: 75px;
+    gap: 6px;
+    position: relative;
+}
+
+.section--house li:before {
+    content: '';
+    width: 134px;
+    height: 134px;
+    background-image: url(../images/guide02.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:190px;
+    left: 70%;
+    transform: translateX(-50%);
+    animation-name: fuwafuwa;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: 1.5s ease-in-out;
+}
+
+.section--house li:after {
+    content: '';
+    width: 110px;
+    height: 75px;
+    background-image: url(../images/house1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom:-21%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.room__img {
+    max-width: 330px;
+    max-height: 250px;
+}
+
+.room__txtBox {
+    padding: 0 24px;
+    width: 360px;
+    height: 250px;
+}
+
+.room__name {
+    font-size: 2.0rem;
+    letter-spacing: 2;
+}
+
+.room__txt {
+    margin-top: 12px;
+    font-size: 1.3rem;
+    letter-spacing: 0.65;
+}
+
+/* house sp */
+@media screen and (max-width: 768px) {
+    .bgshikkui {
+        background-repeat: repeat-y;
+    }
+    
+    .section--house, 
+    .nextDoor {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 48px 20px;
+    }
+
+    .section--house::after {
+        width: 140px;
+        height: 140px;
+        opacity: 30%;
+    }
+
+    .house__txt {
+        padding-top: 30px;
+        gap: 24px;
+    }
+
+    .topic__main--house:before {
+        width: 133px;
+        height: 127px;
+        top:140px;
+        right: -70px;
+        z-index: 1;
+    }
+
+    .house__content{
+        max-width: 335px;
+}
+
+    .section--house li {
+        display: block;
+        padding: 36px 16.5px;
+        max-width: 335px;
+        margin: 43px auto 0 auto;
+    }
+
+    .section--house li:before {
+        width: 80px;
+        height: 80px;
+        top: 260px;
+    }
+
+    .section--house li:after {
+        width: 80px;
+        height: 54.6px;
+        bottom: -55px;
+    }
+
+    .room__img {
+        max-width: 300px;
+    }
+
+    .room__txtBox {
+        margin-top: 24px;
+        padding: 0 12px;
+        width: auto;
+        height: auto;
+    }
+
+}/* sp 768px */
+
+/* ====================
+adventure
+==================== */
+.grid {
+    display: grid;
+    place-content: center;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    max-width: 980px;
+    margin: 93px auto 48px auto;
+}
+
+.item {
+    width: 300px;
+    height: auto;
+}
+
+.item:hover {
+    animation: bounce 0.5s;
+}
+
+.item--guide img {
+    margin-left: auto;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top: -13px;
+    left: 190px;
+    animation-name: chokomaka;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    transition: 1.5s ease-in-out;
+    /* animation-timeline: view(); */
+    animation-range: cover;
+    animation-iteration-count: 5;
+}
+
+.grid p {
+    margin: 0 auto;
+    width: 233px;
+    height: 147px;
+    background-image: url(../images/speechBubble.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    order: 2;
+}
+
+.grid p::after {
+    content: '';
+    width: 112px;
+    height: 112px;
+    background-image: url(../images/guide01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 135px;
+    left: 50%;
+}
+
+.adventure__txt {
+    padding: 24px 0;
+    text-align: center;
+    line-height: 1.8;
+    position: relative;
+}
+
+.adventure__txt::before {
+    content: '';
+    width: 360px;
+    height: 360px;
+    background-image: url(../images/adventure_txt_before.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 30%;
+    top: 0;
+    right: 5%;
+    overflow: hidden;
+    animation: katakata 6s infinite ease-in-out alternate;
+}
+
+.adventure__txt::after {
+    content: '';
+    width: 392px;
+    height: 126px;
+    background-image: url(../images/adventure_voice1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 60px;
+    left: 5%;
+    animation: tekuteku ease-in-out;
+    animation-timeline: view();
+    animation-range: cover;
+    overflow: hidden;
+}
+
+/* adventure sp  */
+@media screen and (max-width: 768px) {
+    .grid {
+        margin: 12px auto;
+        gap: 60px;
+    }
+
+    .item:nth-of-type(1) {order: 2;}
+    .item:nth-of-type(2) {order: 1;}
+    .item:nth-of-type(3) {order: 3;}
+    .item:nth-of-type(4) {order: 4;}
+    .item:nth-of-type(5) {order: 5;}
+    .item:nth-of-type(6) {order: 6;}
+    .item:nth-of-type(7) {order: 7;}
+    .item:nth-of-type(8) {order: 8;}
+    .item:nth-of-type(9) {order: 9;}
+    .item:nth-of-type(10) {order: 10;}
+    .item:nth-of-type(11) {order: 11;}
+    .item:nth-of-type(12) {order: 12;}
+
+    .grid p:after {
+        top: 110px;
+        left: 45%;
+    }
+
+    .adventure__txt::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    .adventure__txt::after {
+        width: 235px;
+        height: 76px;
+        top: 260px;
+        left: 15%;
+        animation: none;
+    }
+
+    .item--guide img {
+        width: 150px;
+        height: 150px;
+        left: 50px;
+        animation: katakata 6s infinite ease-in-out alternate;
+    }
+}/* sp 768px */
+
+/* ====================
+nextDoor
+==================== */
+.nextDoor {
+    width: 769px;
+    padding-top: 24px;
+    padding-bottom: 100px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.btn__next {
+    margin: 0 auto;
+}
+
+.nextDoor p {
+    margin: 0 auto;
+    width: 183px;
+    height: 116px;
+    background-image: url(../images/speechBubble.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nextDoor p:first-of-type {
+    margin-right: 0;
+}
+
+.nextDoor p:first-of-type::after {
+    content: '';
+    width: 160px;
+    height: 160px;
+    background-image: url(../images/guide01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 110px;
+    left: 50px;
+    transform-origin: center bottom;
+    animation: yurayura 2s linear infinite;
+    z-index: 1;
+}
+
+.nextDoor p:last-of-type {
+    margin-left: 0;
+}
+
+.nextDoor p:last-of-type::after {
+    content: '';
+    width: 120px;
+    height: 120px;
+    background-image: url(../images/guide02.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 110px;
+    left: 125px;
+    z-index: 1;
+}
+
+/* next door sp */
+@media screen and (max-width: 768px) {
+    .nextDoor {
+        padding-top: 12px;
+        padding-bottom: 100px;
+        display: block;
+        width: auto;
+    }
+
+    .btn__next--gallery {
+        margin: 130px auto 6px auto;
+    }
+
+    .nextDoor p:first-of-type {
+        margin-left: 0;
+    }
+
+    .nextDoor p:first-of-type::after {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nextDoor p:last-of-type {
+        margin: 0 auto;
+    }
+    
+    .nextDoor p:last-of-type::after {
+        content: '';
+        width: 100px;
+        height: 100px;
+    }
+
+}/* sp 768px */
+
+/* ====================
+articleFooter
+==================== */
+.article__footer {
+    text-align: center;
+    padding-bottom: 80px;
+    background-color: rgba(232, 233, 241, 0.5);
+    position: relative;
+}
+
+.article__footer::after {
+    content: '';
+    width: 354px;
+    height: 382px;
+    background-image: url(../images/adventure_after.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    position: absolute;
+    top: 30px;
+    right: 5.5%;
+    animation: katakata 6s infinite ease-in-out alternate;
+    animation-delay: 2s;
+}
+
+.topic__end {
+    padding-top: 80px;
+    text-align: center;
+    font-size: 2.8rem;
+    line-height: 1.8;
+    letter-spacing: 2.8;
+}
+
+.spBr {
+    display: none;
+}
+
+.epilogue__txt {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    color: var(--Base-default, #0B1644);
+    font-size: 1.4rem;
+    line-height: 1.8;
+    letter-spacing: 0.7;
+}
+
+/* article footer sp */
+@media screen and (max-width: 768px) {
+    .spBr {
+        display: block;
+    }
+
+    .article__footer {
+        padding: 48px 20px;
+    }
+
+    .article__footer::after {
+        width: 174px;
+        height: 190px;
+        top: 10px;
+        right: 10%;
+    }
+
+    .topic__end {
+        padding-top: 0;
+        font-size: 2.0rem;
+        letter-spacing: 2px;
+        margin-left: 0;
+    }
+
+    .epilogue__txt {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        font-family: "Zen Kaku Gothic New";
+        line-height: 1.5;
+        text-align: left;
+    }
+}/* sp 768px */

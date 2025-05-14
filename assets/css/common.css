@@ -1,0 +1,394 @@
+@charset "UTF-8";
+/* ====================
+common
+==================== */
+:root {
+    --primary-darkNavy: #0B1644;
+    --primary-purple: #5654A2;
+    --primary-white: #FDFDFD;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 
+        "Noto Sans JP",
+        Arial
+        sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    color: #0B1644;
+    background-color: #FDFDFD;
+    line-height: 1.5;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.topic {
+    font-family: "Hina Mincho", serif;
+    line-height: 1.8;
+    margin-left: -33px;
+}
+
+.topic__group {
+    display: inline-flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background-image: url(../images/title_bg.png);    
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+.topic__symbol {
+    width: 90px;
+    height: 57.3px;
+}
+
+.topic__main {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    padding-right: 5px;
+}
+
+.voice {
+    color: var(--Base-accent, #5654A2);
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.4rem;
+    letter-spacing: 0.7px;
+    text-align: center;
+}
+
+.btn {
+    width: 420px;
+    height: 71px;
+    border-radius: 15px;
+    background-image: url(../images/btn_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 0px 9px #02030A;
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    transition-duration: .2s;
+    transition: 0.5s ease-in-out;
+}
+
+/* ボタンホバー時cursor*/
+.btn {
+    cursor: url(../images/cursor.png) 50 50, pointer;
+    transition: .5s ease-in-out;
+}
+
+.btn:hover {
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+    color: #0B1644;
+    text-shadow: none;
+    transition: .5s ease-in-out;
+}
+
+/* btn: hover */
+/* @media (hover: hover) {
+    .btn__select:where(:any-link, :enabled, summary):hover,
+    .btn__next:where(:any-link, :enabled, summary):hover {
+        background-image: url(../images/title_bg.png);
+        color: #0B1644;
+        text-shadow: none;
+    }
+} */
+/* btn: hover */
+
+
+@keyframes chikuchiku {   
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fuwafuwa {   
+    0% {
+        transform:translate(0, 0)rotate(-7deg);
+    }
+    50% {
+        transform:translate(0, -7px)rotate(0deg);
+    }
+    100% {
+        transform:translate(0, 0)rotate(7deg);
+    }
+}  
+
+@keyframes chokomaka {   
+    0% {transform: translate(-50px, 25px);}
+    50% {transform: translate(-200px, 75px)scale(1.2, 1.2);}
+    100% {transform: translate(-50px, 25px)scale(1, 1);}
+}
+
+@keyframes katakata {
+    0% {transform:translate(0, 0) rotate(0deg);}
+    21% {transform:translate(0, 0) rotate(0deg);}
+  
+    22% {transform:translate(0, 0) rotate(-3deg);}
+    23% {transform:translate(0, -1px) rotate(0deg);}
+    24% {transform:translate(0, -1px) rotate(3deg);}
+  
+    25% {transform:translate(1px, 0) rotate(-2deg);}
+    26% {transform:translate(0, 1px) rotate(0deg);}
+    27% {transform:translate(0, 0) rotate(3deg);}
+  
+    28% {transform:translate(0, 0) rotate(0deg);}
+    100% {transform:translate(0, 0) rotate(0deg);}
+  }
+
+@keyframes tekuteku {
+    0% {left: 40px;}
+    10% {left: 80px;}
+    20% {left: 120px;}
+    30% {left: 160px;}
+    40% {left: 200px;}
+    50% {left: 240px;}
+    60% {left: 280px;}
+    70% {left: 320px;}
+    80% {left: 360px;}
+    90% {left: 400px;}
+    100% {left: 440px;}
+}
+
+@keyframes yurayura {
+    0% , 100%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+  }
+
+@keyframes bounce {
+    0%    { transform:translate(0, 0); }
+    100% { transform:translate(0, -20px); }
+}  
+
+/* common sp */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .topic {
+        margin-left: -25px;
+    }
+    .topic__symbol {
+        width: 55px;
+        height: 36px;
+    } 
+    
+    .topic__main {
+        font-size: 2.0rem;
+        letter-spacing: 0.1em;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 335px;
+        font-size: 2.0rem;
+        letter-spacing: 2.0px;
+        margin: 0 auto;
+    }
+
+    .pcBr {
+        display: none;
+    }
+
+    @keyframes swanAnime {
+        0% {left: 10px;}
+        10% {left: 20px;}
+        20% {left: 30px;}
+        30% {left: 40px;}
+        40% {left: 50px;}
+        50% {left: 60px;}
+        60% {left: 70px;}
+        70% {left: 80px;}
+        80% {left: 90px;}
+        90% {left: 100px;}
+        100% {left: 110px;}
+    }
+    
+}/* sp 768px */
+
+/* ====================
+header
+==================== */
+#fixed-header {
+    width: 100%;
+    padding: 0 2.3% 0 0;
+    background-color: rgba(253, 253, 253, 0.50);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: -98px;
+    z-index: 3;
+    transition: .5s;
+}
+
+/* header scroll */
+#fixed-header.is-show {
+    top: 0;
+}/* header scroll */
+
+.header__topic {
+    width: 284px;
+    height: 98px;
+}
+
+.header__topic img {
+    height: 98px;
+}
+
+.header__btn,
+.nav__btn {
+    width: 50px;
+    height: 50px;
+}
+
+/* nav初期表示 */
+.nav {
+    background-image: url(../images/nav_bg.png);
+    background-color:rgba(255,255,255,0.3);
+    background-blend-mode:lighten;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 12px 28px 29px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.4s;
+}
+
+.nav__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70.7px;
+}
+
+.nav__topic {
+    width: 120px;
+    height:55.8px ;
+}
+
+.nav__list {
+    margin-top: 32px;
+}
+
+.nav__item {
+    margin-top: 32px;
+    text-align: left;
+    font-size: 2.0rem;
+    letter-spacing: 1;
+    line-height: 1.8;
+}
+
+/* .nav.active表示 */
+.nav.active {
+    transform: translateX(0);
+}
+
+/* header sp */
+@media screen and (max-width: 768px) {
+    .nav {
+        padding: 12px 12px 29px 48px;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .nav__header {
+        align-items: start;
+        height: 55.8px;
+    }
+    
+    .header__topic {
+        width: 104px;
+        height: 49.2px;
+    }
+
+    .header__topic img {
+        height: 49px;
+    }
+
+    .nav__list {
+        margin-top: 60px;
+    }
+
+    .nav__item {
+        font-size: 1.6rem;
+    }
+    
+    .header__btn,
+    .nav__btn {
+        width: 30px;
+        height: 30px;
+    }
+}/* sp 768px */
+
+/* ====================
+scrollTop
+==================== */
+.topBtn {
+    background-image: url(../images/goToTopBtn_pc3.png);
+    background-size: contain;
+    width: 81px;
+    height: 117px;
+    display: inline-block;
+    position: fixed;
+    bottom: 16px;
+    right: 20px;
+    opacity: 80%;
+    z-index: 2;
+}
+
+/* sp 768px */
+@media screen and (max-width: 768px) {
+    .topBtn {
+        /* background-image: url(../images/goToTopBtn.png); */
+        /* width: 49px;
+        height: 73px; */
+        bottom: 16px;
+        right: 10px;
+    }
+}
+
+/* ====================
+footer
+==================== */
+.footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/footer.png);
+    background-color:rgba(255,255,255,0.3);
+    background-blend-mode:lighten;
+}
+
+.copy {
+    font-size: 1.2rem;
+}

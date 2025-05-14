@@ -1,0 +1,347 @@
+@charset "UTF-8";
+/* ====================
+gallery
+==================== */
+#fixed-header {
+    top: 0;
+}
+
+.bgshikkui {
+    background-image: url(../images/bg_shikkui_housePc.png);
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.gallery__txt {
+    padding-top: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.topic__main--gallery {
+    position: relative;
+    font-size: 2.8rem;
+}
+
+.topic__main--gallery:before {
+    content: '';
+    width: 195px;
+    height: 206px;
+    background-image: url(../images/gallery_voice1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:20px;
+    left: -60%;
+    transform-origin: center bottom;
+    animation: yurayura 2s linear infinite;
+}
+
+/* gallery sp */
+@media screen and (max-width: 768px) {
+    .gallery__txt {
+        padding: 80px 20px 100px 20px;
+        gap: 24px;
+    }
+    
+    .topic__main--gallery {
+        font-size: 1.8rem;
+    }
+    
+    .topic__main--gallery:before {
+        background-image: url(../images/gallery_voice1-sp.png);
+        width: 203px;
+        height: 175px;
+        top:130px;
+        left: 0;
+    }
+    
+    .topic__lead {
+        text-align: left;
+    }
+    
+}/* sp 768px */
+
+/* ====================
+gallery
+==================== */
+.section--gallery {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    place-content: center;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    max-width: 980px;
+    margin: 80px auto 48px auto;
+    position: relative;
+}
+
+.grid::after {
+    content: '';
+    width: 300px;
+    height: 300px;
+    background-image: url(../images/chikuchiku.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+     /* アニメーション */
+    animation: chikuchiku 60s steps(60) infinite;
+}
+
+.item {
+    width: 300px;
+    height: auto;
+    z-index: 1;
+}
+
+.item img {
+    border-radius: 30px;
+}
+
+.gallery__name {
+    width: 100%;
+    height: 29px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.gallery__txt2 {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery__txt2::after {
+    content: '';
+    width: 260px;
+    height: 181px;
+    background-image: url(../images/gallery_voice2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -70px;
+    right: -265px;
+    transform-origin: center bottom;
+    animation: yurayura 2s linear infinite;
+}
+
+.grid4fr {
+    display: grid;
+    place-content: center;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    max-width: 980px;
+    margin: 80px auto 0 auto;
+    position: relative;
+}
+
+.grid4fr::after {
+    content: '';
+    width: 700px;
+    height: 700px;
+    background-image: url(../images/chikuchiku.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 20%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+     /* アニメーション */
+    animation: chikuchiku 60s steps(60) infinite;
+}
+
+.item--4fr {
+    width: 200px;
+    height: 241px;
+    position: relative;
+}
+
+/* クリック誘導 */
+.character {
+    position: absolute;
+    background-image: url(../images/guide02.png);
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    top: -30px; /* 下端からの位置 */
+    left: -30px; /* 右端からの位置 */
+    opacity: 0; /* 初期状態で非表示 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.5); /* 初期状態で縮小 */
+    z-index: -1;
+}
+
+.character--mon {
+    background-image: url(../images/guide03.png);
+    top: -40px;
+    left: -50px;
+}
+
+/* ホバー時のキャラクターの動き */
+.item--4fr:hover .character {
+    opacity: 1; /* 表示 */
+    transform: scale(1); /* 元のサイズに拡大 */
+  }
+
+.test {
+    position: relative;
+}
+
+.test::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/double_allow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.grid4fr img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* gallery sp */
+@media screen and (max-width: 768px) {
+    .grid {
+        max-width: 728px;
+        margin: 48px auto;
+    }
+
+    .grid::after {
+        width: 150px;
+        height: 150px;
+        bottom: -60px;
+        right: 5%;
+    }
+
+    .grid4fr {
+        gap: 6px;
+        grid-template-columns: repeat(auto-fit, 165px);
+        margin: 235px auto 0 auto;
+    }
+
+    .grid4fr::after {
+        width: 150px;
+        height: 150px;
+    }    
+
+    .item--4fr  {
+        width: 165px;
+        height: 200px;
+    }
+
+    .grid4fr img {
+        width: 165px;
+        height: 165px;
+    }
+
+    .gallery__name {
+        margin-top: 4px;
+    }
+
+    .gallery__txt2 {
+        padding: 0 20px;
+    }
+
+    .gallery__txt2::after {
+        top: 70px;
+        right: 25%;
+        transform: translateX(50%);
+    }
+}/* sp 768px */
+
+/* ====================
+next door
+==================== */
+.nextDoor {
+    padding: 80px 0;
+}
+
+.btn__next--gallery {
+    margin: 0 auto;
+}
+
+/* next door sp */
+@media screen and (max-width: 768px) {
+    .nextDoor {
+        padding: 48px 0;
+    };
+}/* sp 768px */
+
+/* ====================
+modal
+==================== */
+/* モーダル画像 */
+.modal__item {
+    z-index: -10;
+    opacity: 0;
+    transition:  opacity 0.5s;
+    width: 0;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 4px 12px 4px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal__item.open {
+    z-index: 10;
+    opacity: 1;
+    width: 80%;
+    max-width: 768px;
+}
+
+/* 背景 */
+.grid4fr::before {
+    display: none;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.grid4fr.open::before {
+    display: block;
+}
+
+/* 閉じるボタン */
+.close {
+    display: none;
+    width: 24px;
+    position: fixed;
+    top: 11%;
+    right: 6%;
+    z-index: 100;
+}
+
+.close.open {
+    display: block;
+}
+
+.close img {
+    width: 100%;
+}

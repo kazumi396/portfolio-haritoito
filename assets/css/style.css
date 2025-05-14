@@ -1,0 +1,674 @@
+@charset "UTF-8";
+/* ====================
+common
+==================== */
+:root {
+    --primary-darkNavy: #0B1644;
+    --primary-purple: #5654A2;
+    --primary-white: #FDFDFD;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 
+        "Noto Sans JP",
+        Arial
+        sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    color: #0B1644;
+    background-color: #FDFDFD;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.topic {
+    font-family: "Hina Mincho", serif;
+    line-height: 1.8;
+    margin-left: -33px;
+}
+
+.topic__group {
+    display: inline-flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background-image: url(../images/title_bg.png);    
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+.topic__symbol {
+    width: 90px;
+    height: 57.3px;
+}
+
+.topic__main {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+}
+
+.btn {
+    width: 420px;
+    height: 71px;
+    border-radius: 15px;
+    background-image: url(../images/btn_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 0px 9px #02030A;
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+}
+
+/* common sp */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .topic {
+        margin-left: -25px;
+    }
+    .topic__symbol {
+        width: 55px;
+        height: 36px;
+    } 
+    
+    .topic__main {
+        font-size: 2.0rem;
+        letter-spacing: 0.1em;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 335px;
+        font-size: 2.0rem;
+        letter-spacing: 2.0px;
+        margin: 0 auto;
+    }
+
+    .pcBr {
+        display: none;
+    }
+    
+}/* sp 768px */
+
+/* ====================
+header
+==================== */
+.header{
+    width: 100%;
+    padding: 0 2.3% 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header__topic {
+    width: 208px;
+    height: 122.3px;
+}
+
+.header__btn,
+.nav__btn {
+    width: 50px;
+    height: 50px;
+}
+
+/* nav初期表示 */
+.nav {
+    background-image: url(../images/nav_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 12px 28px 29px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.4s;
+}
+
+.nav__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 70.7px;
+}
+
+.nav__topic {
+    width: 120px;
+    height:55.8px ;
+}
+
+.nav__list {
+    margin-top: 32px;
+}
+
+.nav__item {
+    margin-top: 32px;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 350;
+    letter-spacing: 0.7px;
+}
+
+/* .nav.active表示 */
+.nav.active {
+    transform: translateX(0);
+}
+
+/* header sp */
+@media screen and (max-width: 768px) {
+    .nav__header {
+        align-items: start;
+        height: 55.8px;
+    }
+    
+    .header__topic {
+        width: 104px;
+        height: 49.2px;
+    }
+    
+    .header__btn,
+    .nav__btn {
+        width: 30px;
+        height: 30px;
+    }
+}/* sp 768px */
+
+/* ====================
+mainVisual
+==================== */
+.mainVisual {
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.mainVisual::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 170%;
+    background-image: url(../images/prologue_pc.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* 動画 */
+.movie {
+    display: block;
+    width: 100%;
+    min-width: 768px;
+    height: auto;
+    /* aspect-ratio: 16 / 9; */
+    position: relative;
+    z-index: -2;
+}
+
+.mainVisual__img {
+    display: none;
+}
+
+/* article\_header sp */
+@media screen and (max-width: 768px) {
+    .mainVisual::before {
+        display: none;
+    }
+    
+    .movie {
+        display: none;
+    }
+
+    .mainVisual__img {
+        display: block;
+    }
+}/* sp 768px */
+
+/* ====================
+prologue
+==================== */
+.section--prologue {
+    aspect-ratio: 18 / 7;
+    background-image: url(../images/bg_shikkui_topPc.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+.prologue__content {
+    max-width: 980px;
+    height: 560px;
+    margin: 0 auto;
+    padding: 24px 0 12px;
+    display: block;
+    position: relative;
+}
+
+.topic__first {
+    text-align: center;
+    font-size: 4.0rem;
+    line-height: 1.8;
+    letter-spacing: 4;
+}
+
+.prologue__txt1 {
+    margin-left: auto;
+    width: 510px;
+    max-width: 700px;
+    padding: 10px;
+    text-align: right;
+    font-family: "Noto Sans JP";
+    font-size: 2.0rem;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 1;
+    position: relative;
+}
+
+.prologue__txt1::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-image: url(../images/guide01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 15px;
+    left: -28%;
+}
+
+.prologue__txt2 {
+    margin-right: auto;
+    width: 390px;
+    max-width: 600px;
+    padding: 10px;
+    text-align: left;
+    font-family: "Noto Sans JP";
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.8;
+    position: relative;
+}
+
+.prologue__txt2::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/guide01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 15px;
+    right: -23%;
+}
+
+.prologue__txt3 {
+    margin:0 9.5% 0 56.8% ;
+    width: 330px;
+    padding: 10px;
+    text-align: right;
+    font-family: "Noto Sans JP";
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.7;
+    position: relative;
+}
+
+.prologue__txt3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../images/guide01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 15px;
+    left: -20%;
+}
+
+/* prologue sp */
+@media screen and (max-width: 768px) {
+    .section--prologue {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 48px 20px;
+        background-image: url(../images/prologue_sp.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        position: relative;
+    }
+
+    .topic__first {
+        font-size: 2.0rem;
+        letter-spacing: 2;
+    }
+
+    .prologue__txt1 {
+        margin-top: 48px;
+        width: 100%;
+        padding: 0;
+        text-align: left;
+        font-size: 1.8rem;
+        letter-spacing: 0.9;
+    }
+
+    .prologue__txt1::after {
+        width: 60px;
+        height: 60px;
+        top: 163px;
+        left: 73%;
+    }
+    
+    .prologue__txt2 {
+        margin-top: 48px;
+        margin-right: 0;
+        width: 100%;
+        padding: 0;
+        text-align: left;
+        font-size: 1.6rem;
+    }
+
+    .prologue__txt2::after {
+        width: 40px;
+        height: 40px;
+        top: 100x;
+        left: 50%;
+    }
+    
+    .prologue__txt3 {
+        margin:48px 0 0;
+        width: 100%;
+        padding: 0;
+        text-align: left;
+    }
+
+    .prologue__txt3:after {
+        width: 25px;
+        height: 25px;
+        top: 110px;
+        left: 25%;
+    }
+}/* sp 768px */
+
+/* ====================
+entrance
+==================== */
+.section--entrance {
+    padding: 120px 0;
+    text-align: center;
+    background-image: url(../images/bg_shikkui_topPc.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+    position: relative;
+    overflow: hidden;
+}
+
+.section--entrance:after {
+    content: '';
+    display: block;
+    width: 630px;
+    height: 550px;
+    background-image: url(../images/entrance_after.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 50%;
+    position: absolute;
+    top: -45.5px;
+    right: -265px;
+}
+
+.entrance__txt {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.topic__lead {
+    width: 100%;
+    margin-top: 12px;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.6rem;
+    line-height: 1.8;
+    letter-spacing: 0.8;
+    text-align: center;
+}
+
+.door__select {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 24px;
+}
+
+.door__entrance {
+    width: 360px;
+    height: 424px;
+}
+
+.door__img {
+    width: 347px;
+    height: 329px;
+}
+
+.btn__select {
+    margin-top: 24px;
+    max-width: 360px;
+}
+
+/* entrance sp */
+@media screen and (max-width: 768px) {
+    .section--entrance {
+        padding: 48px 20px;
+        background-image: url(../images/bg_sikkui_topSp.png);
+    }
+    
+    .section--entrance:after {
+        display: none;
+    }
+
+    .entrance__txt {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .topic__lead {
+        width: 100%;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        letter-spacing: 0.7;
+        text-align: left;
+    }
+    
+    .door__select {
+        display: block;
+        margin-top: 36px;
+    }
+    
+    .door__entrance {
+        width: 100%;
+        height: auto;
+    }
+ 
+    .door__entrance:last-of-type {
+        margin-top: 48px;
+    }
+    
+    .door__img {
+        width: 261px;
+        height: 248px;
+    }
+    
+    .btn__select {
+        margin-top: 12px;
+    }
+}/* sp 768px */
+
+/* ====================
+guide
+==================== */
+.section--guide {
+    padding: 80px 0 120px 0;
+    text-align: center;
+    background-image: url(../images/bg_shikkui_topPc.png);
+    position: relative;
+    /* 画像を切り取って解決する */
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.section--guide:before {
+    content: '';
+    display: block;
+    width: 618.4px;
+    height: 460.3px;
+    transform: rotate(-12.1deg);
+    background-image: url(../images/guide_before.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 50%;
+    position: absolute;
+    top: -44.5px;
+    left: -232px;
+}
+
+.section--guide::after {
+    content: '';
+    display: block;
+    width: 604.3px;
+    height: 360.8px;
+    transform: rotate(12.9deg);
+    background-image: url(../images/guide_after.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 50%;
+    position: absolute;
+    top: -86.5px;
+    right: -249.8px;
+}
+
+.topic__group--guide {
+    min-width: 303px;
+}
+
+.guide__content {
+    margin: 100px auto 0;
+    display: flex;
+    gap: 20px;
+    max-width: 506px;
+}
+
+.guide__item {
+    display: block;
+    width: 150px;
+}
+
+.guide__img {
+    width: 150px;
+    height: auto;
+}
+
+.guide__txt {
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.4rem;
+    letter-spacing: 0.7;
+}
+
+/* guide sp */
+@media screen and (max-width: 768px) {
+    .section--guide {
+        padding: 12px 20px 48px;
+        background-image: url(../images/bg_sikkui_topSp.png);
+    }
+
+    .section--guide::before {
+        display: none;
+    }
+    .section--guide::after {
+        display: none;
+    }
+    
+    .guide__content {
+        margin: 6px auto 0;
+        display: block;
+        gap: 6px;
+        max-width: 100%;
+    }
+    
+    .guide__item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 24px;
+    }
+    
+    .guide__img {
+        width: 100px;
+    }
+    
+    .guide__txt {
+        text-align: left;
+        font-size: 1.3rem;
+        letter-spacing: 0.65;
+    }
+}/* sp 768px */
+
+/* ====================
+scrollTop
+==================== */
+.topBtn {
+    background-image: url(../images/goToTopBtn.png);
+    background-size: contain;
+    width: 49px;
+    height: 73px;
+    display: inline-block;
+    position: fixed;
+    top: 94.5%;
+    right: 10px;
+}
+
+/* ====================
+footer
+==================== */
+.footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/footer.png);
+}
+
+.copy {
+    font-size: 1.2rem;
+}
